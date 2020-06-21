@@ -1,23 +1,14 @@
 import React from 'react';
 import { Switch, Route, BrowserRouter } from 'react-router-dom';
-import Loadable from 'react-loadable';
+import getLoadableComponent from './utils/getLoadableComponent';
 
 import GlobalStyle from './styles.global';
 
-const Main = Loadable({
-  loader: () => import('./pages/Main'),
-  loading: () => <h1>Carregando...</h1>,
-});
+const Main = getLoadableComponent('Main');
 
-const Login = Loadable({
-  loader: () => import('./pages/Login'),
-  loading: () => <h1>Carregando...</h1>,
-});
+const Login = getLoadableComponent('Login');
 
-const Dashboard = Loadable({
-  loader: () => import('./pages/Dashboard'),
-  loading: () => <h1>Carregando...</h1>,
-});
+const Dashboard = getLoadableComponent('Dashboard');
 
 
 function App() {
